@@ -31,9 +31,10 @@ def lap_score(X, **kwargs):
 
     # if 'W' is not specified, use the default W
     if 'W' not in kwargs.keys():
-        W = construct_W(X)
-    # construct the affinity matrix W
-    W = kwargs['W']
+        W = construct_W(X)  # construct the affinity matrix W
+    else:
+        W = kwargs['W']
+        
     # build the diagonal D matrix from affinity matrix W
     D = np.array(W.sum(axis=1))
     L = W
