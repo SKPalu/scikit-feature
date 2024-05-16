@@ -29,6 +29,12 @@ def lap_score(X, **kwargs):
     He, Xiaofei et al. "Laplacian Score for Feature Selection." NIPS 2005.
     """
 
+    kargkeys = kwargs.keys()
+    print(kargkeys)
+    flag = 'W' not in kargkeys
+    print(flag)
+    print('*****')
+    
     # if 'W' is not specified, use the default W
     if 'W' not in kwargs.keys():
         W = construct_W(X)  # construct the affinity matrix W
